@@ -34,4 +34,5 @@ string Token::enumToString(TokenType token) {
         case UNDEFINED: return "UNDEFINED,"; break;
         case E_OF_FILE: return "EOF,"; break;
     }
+    return ("not found!");
 }
