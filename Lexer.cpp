@@ -94,7 +94,13 @@ void Lexer::Run(std::string& input) {
             Token* newToken = maxAutomaton->CreateToken(description, lineNumber);
             //increment lineNumber by new line read
             lineNumber = lineNumber + maxAutomaton->NewLinesRead();
-            tokens.push_back(newToken);
+            //you can delete all the comments
+            if (newToken->isComment() == true) {
+                //do not create comment tokens do nothing
+            }
+            else {
+                tokens.push_back(newToken);
+            }
         }
         //check for white space.
         else if (isspace(input[0])){
@@ -129,4 +135,8 @@ void Lexer::Print(){
         cout << t->toString() << endl;
     }
     cout << "Total Tokens = " << tokens.size();
+}
+
+vector<Token*> Lexer::GetTokens() const {
+    return tokens;
 }

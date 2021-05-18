@@ -36,3 +36,16 @@ string Token::enumToString(TokenType token) {
     }
     return ("not found!");
 }
+
+bool Token::isComment() {
+    if (this->type == COMMENT) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+string Token::getDescription() {
+    return this->description;
+}

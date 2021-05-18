@@ -47,6 +47,13 @@ add_executable(Datalog_Interpreter
         IdAutomaton.h
         Lexer.cpp
         Lexer.h
+        DatalogProgram.cpp
+        DatalogProgram.h
+        Predicate.h
+        Rule.h
+        Parameter.h
+        Parser.cpp
+        Parser.h
         main.cpp
         Token.cpp
         Token.h)

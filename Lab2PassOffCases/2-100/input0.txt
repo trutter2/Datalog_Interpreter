@@ -1,3 +1,6 @@
+# COPYRIGHT © BRIGHAM YOUNG UNIVERSITY CS 236
+# FOR USE ONLY DURING SPRING 2021 SEMESTER
+# passoffInput25     SUCCESS
 Schemes:snap(S,N,A,P)csg(C,S,G)cp(C,Q)cdh(C,D,H)cr(C,R)
 before(C1,C2)tthCourses(C)Schedule(N,C,R,D,H)
 Grades(N,C,G)Students(C,R,N,G)Facts:

@@ -38,11 +38,15 @@ private:
     string description;
     //what line the token is on.
     int line;
-
+    //allow parser private access?
+    friend class Parser;
 public:
     Token(TokenType type, string description, int line);
     string toString();
     string enumToString(TokenType token);
+    string getDescription();
+    //take care of comments
+    bool isComment();
 
     // TODO: add other needed methods
 };

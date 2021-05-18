@@ -3,6 +3,8 @@
 #include <sstream>
 
 #include "Lexer.h"
+#include "Parser.h"
+
 using namespace std;
 
 int main(int argc, char** argv) {
@@ -25,12 +27,39 @@ int main(int argc, char** argv) {
     Lexer* lexer = new Lexer();
     //put argv[1] into regular string
     string inputString = ss.str();
-    lexer->Run(inputString);
-    lexer->Print();
 
-    // TODO
+    lexer->Run(inputString);
+
+    //let you know if lexer created tokens correctly!
+    //cout << "Tokens created successfully!" << endl;
+
+    //creates a parser object! by getting tokens from the lexer
+    Parser* parser = new Parser(lexer->GetTokens());
+
+    try {
+        parser->parse();
+        cout << "Success!" << endl;
+        cout << parser->toString();
+    }
+    catch (std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > error) {
+        cout << "Failure!" << endl;
+        cout << "  " << error << endl;
+    }
+    catch (...){
+        cout << "big error. you done messed up big" << endl;
+    }
+
+
+
+
+
+
+    //this will print out the tokens.
+    //lexer->Print();
+
 
     delete lexer;
+    delete parser;
 
     return 0;
 }
