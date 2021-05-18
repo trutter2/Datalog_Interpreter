@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
         cout << "Success!" << endl;
         cout << parser->toString();
     }
-    catch (std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > error) {
+    catch (string error) {
         cout << "Failure!" << endl;
         cout << "  " << error << endl;
     }
